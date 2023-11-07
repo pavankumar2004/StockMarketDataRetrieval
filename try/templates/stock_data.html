@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Data for {{ symbol }}</title>
+</head>
+<body>
+    <h1>Stock Data for {{ symbol }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Low</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for low in low_values %}
+                <tr>
+                    <td>{{ low }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

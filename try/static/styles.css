@@ -1,0 +1,153 @@
+/* styles.css */
+
+/* Basic styling for the page */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 24px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Styling for the autocomplete dropdown */
+/* styles.css */
+
+/* ... (previous styles) */
+
+/* Styling for the autocomplete dropdown */
+#suggestions {
+    border: 1px solid #ccc;
+    max-height: 100px; /* Decreased maximum height */
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    display: none;
+    border-radius: 5px;
+    width: 100%;
+    left: 0; /* Center the dropdown */
+    margin-top: 5px; /* Add a little space between the input and dropdown */
+}
+
+.suggestion {
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.suggestion:hover {
+    background-color: #f2f2f2;
+}
+
+/* Styling for the "Get Data" button */
+input[type="submit"] {
+    display: block;
+    margin: 10px auto; /* Center the button horizontally */
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for error messages */
+.error {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+
+/* Styling for error messages */
+.error {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 5px;
+}
+/* styles.css */
+
+/* ... (previous styles) */
+
+/* Styling for the autocomplete dropdown */
+#suggestions {
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    display: none;
+    border-radius: 5px;
+    width: 100%;
+    left: 0; /* Center the dropdown */
+    margin-top: 5px; /* Add a little space between the input and dropdown */
+}
+
+.suggestion {
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.suggestion:hover {
+    background-color: #f2f2f2;
+}
+
+/* Styling for the "Get Data" button */
+input[type="submit"] {
+    display: block;
+    margin: 10px auto; /* Center the button horizontally */
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #4CAF50;
+}
+
+/* Styling for error messages */
+.error {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 5px;
+}
+

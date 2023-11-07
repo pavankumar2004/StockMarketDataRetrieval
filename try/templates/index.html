@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css"> <!-- Link to an external CSS file -->
+    <title>Stock Data for {{symbol}}</title>
+    <style>
+        /* Add some CSS to style the dropdown */
+        .autocomplete-dropdown {
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            background-color: white;
+        }
+        .suggestion {
+            padding: 8px;
+            cursor: pointer;
+        }
+        .suggestion:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Stock Data</h1>
+    <form method="POST">
+        <label for="symbol">Enter a stock symbol:</label>
+        <input type="text" id="symbol" name="symbol" autocomplete="off">
+        <div id="suggestions" class="autocomplete-dropdown"></div> <!-- Container for autocomplete suggestions -->
+        <input type="submit" value="Get Data">
+    </form>
+
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('#symbol').on('input', function() {
+            var prefix = $(this).val().toUpperCase();
+            if (prefix.length > 0) {
+                $.get('/autocomplete', { prefix: prefix }, function(data) {
+                    var suggestions = data;
+                    var suggestionsContainer = $('#suggestions');
+                    suggestionsContainer.empty();
+                    
+                    if (suggestions.length > 0) {
+                        for (var i = 0; i < suggestions.length; i++) {
+                            suggestionsContainer.append('<div class="suggestion">' + suggestions[i] + '</div>');
+                        }
+                        suggestionsContainer.show(); // Show the dropdown
+                    } else {
+                        suggestionsContainer.hide(); // Hide the dropdown if no suggestions
+                    }
+                    
+                    $('.suggestion').on('click', function() {
+                        $('#symbol').val($(this).text());
+                        suggestionsContainer.hide(); // Hide the dropdown after selecting a suggestion
+                    });
+                });
+            } else {
+                $('#suggestions').hide(); // Hide the dropdown if input is empty
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* Apply CSS styles for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f0e0; /* Light green background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensure a minimum height to allow scrolling */
+    overflow: auto; /* Allow scrolling when content exceeds viewport */
+}
+
+/* Style the heading */
+h1 {
+    font-size: 28px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Style the container for the chart */
+#chart-container {
+    width: 100%;
+    height: 70vh; /* Adjust the height to make the chart container larger */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto; /* Allow scrolling if the chart overflows */
+}
+
+/* Style the canvas element for the chart */
+#myChart {
+    max-width: 100%; /* Make the chart width responsive */
+    background-color: transparent; /* Transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the additional information */
+h2 {
+    font-size: 22px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Data Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="static/s.css"> <!-- Link to an external CSS file -->>
+</head>
+<body>
+    <h1>{{symbol}} stock data</h1>
+    <div style = "padding :300px">
+        <canvas id="myChart" style="width: 4; height: 3"></canvas>
+
+
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+        
+            var data = {
+                labels: {{ timestamps | tojson|safe }},
+                datasets: [{
+                    label: 'STOCK PRICE',
+                    data: {{ low |tojson| safe }},
+                    borderColor: 'green',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            };
+        
+            var options = {
+            
+    animation: {
+        easing: 'easeInOutCubic',
+        duration: 4000 // 2 seconds // Cubic easing
+    }
+};
+        
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: options // Make sure to include the animation options here
+            });
+        </script>
+   <h2>HIGHEST PRICE OF {{highest}}$ AT {{timehigh}}</h2>
+   <h2>LOWEST PRICE OF {{lowest}}$ AT {{timelow}}</h2>
+   <h2>BEST TIME TO BUY {{symbol}} BASED ON CURRENT TRENDS IS {{timelow}}</h2>
+    
+
+</body>
+</html>
